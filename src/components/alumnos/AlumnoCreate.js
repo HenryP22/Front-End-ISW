@@ -10,58 +10,55 @@ export default {
     this.get();
   },
   validators: {
-    'model.padreId'(value) {
+    'model.nombres'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+          .maxLength(20);
+      },
+      'model.apellidos'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+          .maxLength(20);
+      },
+      'model.dni'(value) {
+        return this.$validator
+          .value(value)
+          .maxLength(9);
+      },
+      'model.correo'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+         
+          .maxLength(50);
+      },
+      'model.grado_academico'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+          .maxLength(20);
+      },
+      'model.padreId'(value) {
         return this.$validator
           .value(value)
           .required()
 
       },
-    'model.nombres'(value) {
-      return this.$validator
-        .value(value)
-        .required()
-        .minLength(5)
-        .maxLength(20);
-    },
-    'model.apellidos'(value) {
-      return this.$validator
-        .value(value)
-        .required()
-        .minLength(5)
-        .maxLength(20);
-    },
-    'model.dni'(value) {
-      return this.$validator
-        .value(value)
-        .required()
-        .minLength(5)
-        .maxLength(8);
-    },
-    'model.correo'(value) {
-      return this.$validator
-        .value(value)
-        .required()
-        .minLength(5)
-        .maxLength(20);
-    },
-    'model.grado_academico'(value) {
-      return this.$validator
-        .value(value)
-        .required()
-        .minLength(5)
-        .maxLength(20);
-    }
+
+     
   },
   data() {
     return {
       isLoading: false,
       model: {
-        padreId: 1,
+        padreId:1,
         nombres: null,
         apellidos: null,
         dni: null,
-        correo: null,
-        grado_academico: null
+        correo:null,
+        grado_academico:null,
       }
     }
   },
@@ -92,12 +89,13 @@ export default {
 
         this.isLoading = true;
 
+        
           this.$proxies.alumnoProxy.create(this.model)
           .then(() => {
             this.$notify({
               group: "global",
               type: "is-success",
-              text: 'Producto creado con éxito'
+              text: 'Alumno creado con éxito'
             });
             this.$router.push('/alumnos');
           })
@@ -109,10 +107,10 @@ export default {
               text: 'Ocurrió un error inesperado'
             });
           });
-    
+        }
 
 
-      })
+      )
     }
   }
 }

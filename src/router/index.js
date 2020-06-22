@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import AlumnoIndex from '../components/alumnos/AlumnoIndex.vue';
-import AlumnoDetail from '../components/alumnos/AlumnoDetail.vue';
-import AlumnoCreate from '../components/alumnos/AlumnoCreate.vue';
 import Default from '../components/Default.vue';
 import OrderIndex from '../components/orders/OrderIndex.vue';
 import OrderCreate from '../components/orders/OrderCreate.vue';
@@ -10,6 +7,20 @@ import OrderDetail from '../components/orders/OrderDetail.vue';
 import ClientIndex from '../components/clients/ClientIndex.vue';
 import ProductIndex from '../components/products/ProductIndex.vue';
 import ProductCreateOrUpdate from '../components/products/ProductCreateOrUpdate.vue';
+import AlumnoDetail from '../components/alumnos/AlumnoDetail.vue';
+import AlumnoCreate from '../components/alumnos/AlumnoCreate.vue';
+import AlumnoIndex from '../components/alumnos/AlumnoIndex.vue';
+import DocenteIndex from '../components/docentes/DocenteIndex.vue';
+import CursoIndex from '../components/cursos/CursoIndex.vue';
+import FavoritoIndex from '../components/favoritos/FavoritoIndex.vue';
+import InformeIndex from '../components/informes/InformeIndex.vue';
+import MembresiaIndex from '../components/membresias/MembresiaIndex.vue';
+import PadreIndex from '../components/padres/PadreIndex.vue';
+import PagoIndex from '../components/pagos/PagoIndex.vue';
+import TarjetaIndex from '../components/tarjetas/TarjetaIndex.vue';
+import TutoriaIndex from '../components/tutorias/TutoriaIndex.vue';
+
+
 import UserIndex from '../components/users/UserIndex.vue';
 import store from '../store/index'
 
@@ -23,7 +34,12 @@ const routes = [
     component: Default
   },
   {
-    path: '/alumnos/',
+    path: '/orders',
+    name: 'orders',
+    component: OrderIndex
+  },  
+  {
+    path: '/alumnos',
     name: 'alumnos',
     component: AlumnoIndex
   },  
@@ -31,16 +47,56 @@ const routes = [
     path: '/alumnos/:id/detail',
     name: 'alumnosdetail',
     component: AlumnoDetail
-  }, 
+  },  
   {
     path: '/alumnos/create',
     name: 'alumnoscreate',
     component: AlumnoCreate
-  },
+  },  
   {
-    path: '/orders',
-    name: 'orders',
-    component: OrderIndex
+    path: '/cursos',
+    name: 'cursos',
+    component: CursoIndex
+  },  
+  {
+    path: '/informes',
+    name: 'informes',
+    component: InformeIndex
+  },  
+  {
+    path: '/membresias',
+    name: 'membresias',
+    component: MembresiaIndex
+  },  
+  {
+    path: '/padres',
+    name: 'padres',
+    component: PadreIndex
+  },  
+  {
+    path: '/pagos',
+    name: 'pagos',
+    component: PagoIndex
+  },  
+  {
+    path: '/tarjetas',
+    name: 'tarjetas',
+    component: TarjetaIndex
+  },  
+  {
+    path: '/tutorias',
+    name: 'tutorias',
+    component: TutoriaIndex
+  },  
+  {
+    path: '/favoritos',
+    name: 'favoritos',
+    component: FavoritoIndex
+  },  
+  {
+    path: '/docentes',
+    name: 'docentes',
+    component: DocenteIndex
   },  
   {
     path: '/orders/:id/detail',
@@ -77,8 +133,7 @@ const routes = [
     name: 'users',
     component: UserIndex,
     beforeEnter: authorization
-  },
-
+  }
 ]
 
 //to:a donde va, from: de donde viene: next: si procede a que ruta lo enviamos
