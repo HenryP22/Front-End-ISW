@@ -15,10 +15,18 @@
         <div id="navbarMenuHeroC" class="navbar-menu">
           <div class="navbar-end">
              <router-link :class="{'is-active': $route.name === 'default'}" class="navbar-item" to="/">Inicio</router-link>
-            <router-link :class="{'is-active': $route.path.startsWith('/orders')}" class="navbar-item" to="/orders">Órdenes</router-link>
             <router-link :class="{'is-active': $route.path.startsWith('/alumnos')}" class="navbar-item" to="/alumnos">Alumnos</router-link>
-            <router-link :class="{'is-active': $route.path.startsWith('/clients')}" class="navbar-item" to="/clients">Clientes</router-link>
-            <router-link :class="{'is-active': $route.path.startsWith('/products')}" class="navbar-item" to="/products">Productos</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/docentes')}" class="navbar-item" to="/docentes">Docentes</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/cursos')}" class="navbar-item" to="/cursos">Cursos</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/informes')}" class="navbar-item" to="/informes">Informes</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/membresias')}" class="navbar-item" to="/membresias">Membresías</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/favoritos')}" class="navbar-item" to="/favoritos">Favoritos</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/padres')}" class="navbar-item" to="/padres">Padres</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/pagos')}" class="navbar-item" to="/pagos">Pagos</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/tarjetas')}" class="navbar-item" to="/tarjetas">Tarjetas</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/tutorias')}" class="navbar-item" to="/tutorias">Tutorías</router-link>
+            
+
             <router-link :class="{'is-active': $route.path.startsWith('/users')}" v-if="user.roles.includes('ADMIN')" class="navbar-item" to="/users">Usuarios</router-link>
           
             <span class="navbar-item">

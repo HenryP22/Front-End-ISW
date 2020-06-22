@@ -80,7 +80,7 @@ export default {
 
             this.product.quantity = 1;
             this.product.unitPrice = product.price;
-        },
+        },  
         addProduct() {
             if (!this.model.items.some(x => x.productId === this.product.productId)) {
                 // Debería venir del servidor

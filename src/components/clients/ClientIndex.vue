@@ -10,6 +10,7 @@
         <li>Implementar el crear un nuevo cliente.</li>
         <li>Implementar el actualizar un cliente.</li>
         <li>Implementar el eliminar un cliente.</li>
+        <li>GAAA.</li>
       </ul>
     </div>
   </div>

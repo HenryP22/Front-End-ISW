@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h1 class="title">{{model.alumnoId ? model.name : 'Nuevo producto'}}</h1>
-    <h2 class="subtitle">{{model.alumnoId ? model.description : 'Creación de producto.'}}</h2>
+    <h1 class="title">{{model.alumnoId ? model.nombres : 'Nuevo Alumno'}}</h1>
+    <h2 class="subtitle">{{model.alumnoId ? model.apellidos : 'Creación de Alumno.'}}</h2>
 
     <Loader v-if="isLoading" />
     <form v-else @submit.prevent="save">
+
       <div class="field">
         <input
           :class="{error: validation.hasError('model.nombres')}"
@@ -15,16 +16,22 @@
         />
         <p class="help is-danger">{{validation.firstError('model.nombres')}}</p>
       </div>
+
+
+
       <div class="field">
         <input
           :class="{error: validation.hasError('model.apellidos')}"
           v-model="model.apellidos"
           class="input"
           type="text"
-          placeholder="Ingrese el apelldios"
+          placeholder="Ingrese el apellido"
         />
         <p class="help is-danger">{{validation.firstError('model.apellidos')}}</p>
       </div>
+
+
+
       <div class="field">
         <textarea
           :class="{error: validation.hasError('model.dni')}"
@@ -35,6 +42,8 @@
         ></textarea>
         <p class="help is-danger">{{validation.firstError('model.dni')}}</p>
       </div>
+
+      
       <div class="field">
         <input
           :class="{error: validation.hasError('model.correo')}"
@@ -42,19 +51,25 @@
           class="input"
           type="text"
           placeholder="Ingrese el correo"
-        />
+       />
         <p class="help is-danger">{{validation.firstError('model.correo')}}</p>
-      </div>
-      <div class="field">
+        </div>
+        
+
+
+
+        <div class="field">
         <input
           :class="{error: validation.hasError('model.grado_academico')}"
           v-model="model.grado_academico"
-          class="input"
+         class="input"
           type="text"
-          placeholder="Ingrese el grado"
+          placeholder="Ingrese el Grado Académico"
         />
         <p class="help is-danger">{{validation.firstError('model.grado_academico')}}</p>
       </div>
+      
+      
       <div class="field">
         <button type="submit" class="button is-info">Guardar</button>
       </div>
