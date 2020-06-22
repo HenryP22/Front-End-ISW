@@ -1,92 +1,65 @@
 <template>
   <div>
-    <h1 class="title">Creación de alumnos</h1>
-    <h2 class="subtitle">Desde aquí podrá crear un alumno nuevo.</h2>
+    <h1 class="title">{{model.alumnoId ? model.name : 'Nuevo producto'}}</h1>
+    <h2 class="subtitle">{{model.alumnoId ? model.description : 'Creación de producto.'}}</h2>
 
     <Loader v-if="isLoading" />
-    <template v-else>
-      <div class="box">
-        <div class="select is-fullwidth">
-          <select v-model.number="model.alumnoId">
-            <option
-              v-for="client in clients"
-              :key="client.clientId"
-              :value="client.clientId"
-            >{{client.name}}</option>
-          </select>
-        </div>
+    <form v-else @submit.prevent="save">
+      <div class="field">
+        <input
+          :class="{error: validation.hasError('model.nombres')}"
+          v-model="model.nombres"
+          class="input"
+          type="text"
+          placeholder="Ingrese el nombre"
+        />
+        <p class="help is-danger">{{validation.firstError('model.nombres')}}</p>
       </div>
-
-      <div class="box">
-        <table class="table is-fullwidth is-striped">
-          <thead>
-            <tr>
-              <th colspan="2">Producto</th>
-              <th class="has-text-right" style="width:150px;">Cantidad</th>
-              <th class="has-text-right" style="width:150px;">P.U</th>
-              <th class="has-text-right" style="width:150px;">IVA</th>
-              <th class="has-text-right" style="width:150px;">Sub Total</th>
-              <th class="has-text-right" style="width:150px;">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan="2">
-                <div class="select is-fullwidth">
-                  <select @change="onChangeProductSelection" v-model.number="product.productId">
-                    <option
-                      v-for="product in products"
-                      :key="product.productId"
-                      :value="product.productId"
-                    >{{product.name}}</option>
-                  </select>
-                </div>
-              </td>
-              <td>
-                <input class="input" type="number" v-model.number="product.quantity" />
-              </td>
-              <td>
-                <input class="input" type="number" v-model.number="product.unitPrice" />
-              </td>
-              <td class="has-text-right" colspan="3">
-                <button @click="addProduct" class="button">Agregar</button>
-              </td>
-            </tr>
-
-            <tr v-if="model.items.length === 0">
-              <td class="has-text-centered is-size-5" colspan="7">No se ha seleccionado un producto</td>
-            </tr>
-            <tr v-else v-for="item in model.items" :key="item.productId">
-              <td class="has-text-centered" style="width:100px;">
-                <a class="has-text-danger" @click="removeProduct(item.productId)">Retirar</a>
-              </td>
-              <td>{{item.name}}</td>
-              <td class="has-text-right">{{item.quantity}}</td>
-              <td class="has-text-right">US$ {{item.unitPrice}}</td>
-              <td class="has-text-right">US$ {{item.iva}}</td>
-              <td class="has-text-right">US$ {{item.subTotal}}</td>
-              <td class="has-text-right">US$ {{item.total}}</td>
-            </tr>
-          </tbody>
-          <tfoot class="has-text-weight-bold">
-            <tr>
-              <td colspan="6" class="has-text-right">IVA</td>
-              <td class="has-text-right">US$ {{iva}}</td>
-            </tr>
-            <tr>
-              <td colspan="6" class="has-text-right">Sub Total</td>
-              <td class="has-text-right">US$ {{subTotal}}</td>
-            </tr>
-            <tr>
-              <td colspan="6" class="has-text-right">Total</td>
-              <td class="has-text-right">US$ {{total}}</td>
-            </tr>
-          </tfoot>
-        </table>
-        <button @click="create" :disabled="model.items.length === 0" class="button is-primary is-medium is-fullwidth">Crear orden</button>
+      <div class="field">
+        <input
+          :class="{error: validation.hasError('model.apellidos')}"
+          v-model="model.apellidos"
+          class="input"
+          type="text"
+          placeholder="Ingrese el apelldios"
+        />
+        <p class="help is-danger">{{validation.firstError('model.apellidos')}}</p>
       </div>
-    </template>
+      <div class="field">
+        <textarea
+          :class="{error: validation.hasError('model.dni')}"
+          v-model="model.dni"
+          class="input"
+          type="number"
+          placeholder="Ingrese la dni"
+        ></textarea>
+        <p class="help is-danger">{{validation.firstError('model.dni')}}</p>
+      </div>
+      <div class="field">
+        <input
+          :class="{error: validation.hasError('model.correo')}"
+          v-model="model.correo"
+          class="input"
+          type="text"
+          placeholder="Ingrese el correo"
+        />
+        <p class="help is-danger">{{validation.firstError('model.correo')}}</p>
+      </div>
+      <div class="field">
+        <input
+          :class="{error: validation.hasError('model.grado_academico')}"
+          v-model="model.grado_academico"
+          class="input"
+          type="text"
+          placeholder="Ingrese el grado"
+        />
+        <p class="help is-danger">{{validation.firstError('model.grado_academico')}}</p>
+      </div>
+      <div class="field">
+        <button type="submit" class="button is-info">Guardar</button>
+      </div>
+    </form>
   </div>
 </template>
 
-<script src="./OrderCreate.js"></script>
+<script src="./AlumnoCreate.js"></script>

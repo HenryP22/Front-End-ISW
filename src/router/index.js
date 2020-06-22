@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import AlumnoIndex from '../components/alumnos/AlumnoIndex.vue';
+import AlumnoDetail from '../components/alumnos/AlumnoDetail.vue';
+import AlumnoCreate from '../components/alumnos/AlumnoCreate.vue';
 import Default from '../components/Default.vue';
 import OrderIndex from '../components/orders/OrderIndex.vue';
 import OrderCreate from '../components/orders/OrderCreate.vue';
@@ -18,6 +21,21 @@ const routes = [
     path: '/',
     name: 'default',
     component: Default
+  },
+  {
+    path: '/alumnos/',
+    name: 'alumnos',
+    component: AlumnoIndex
+  },  
+  {
+    path: '/alumnos/:id/detail',
+    name: 'alumnosdetail',
+    component: AlumnoDetail
+  }, 
+  {
+    path: '/alumnos/create',
+    name: 'alumnoscreate',
+    component: AlumnoCreate
   },
   {
     path: '/orders',
@@ -59,7 +77,8 @@ const routes = [
     name: 'users',
     component: UserIndex,
     beforeEnter: authorization
-  }
+  },
+
 ]
 
 //to:a donde va, from: de donde viene: next: si procede a que ruta lo enviamos

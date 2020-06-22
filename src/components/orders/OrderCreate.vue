@@ -7,12 +7,12 @@
     <template v-else>
       <div class="box">
         <div class="select is-fullwidth">
-          <select v-model.number="model.clientId">
+          <select v-model.number="model.alumnoId">
             <option
-              v-for="client in clients"
-              :key="client.clientId"
-              :value="client.clientId"
-            >{{client.name}}</option>
+              v-for="alumno in alumnos"
+              :key="alumno.alumnoId"
+              :value="alumno.alumnoId"
+            >{{alumno.Nombres}}</option>
           </select>
         </div>
       </div>
@@ -22,11 +22,11 @@
           <thead>
             <tr>
               <th colspan="2">Producto</th>
-              <th class="has-text-right" style="width:150px;">Cantidad</th>
-              <th class="has-text-right" style="width:150px;">P.U</th>
-              <th class="has-text-right" style="width:150px;">IVA</th>
-              <th class="has-text-right" style="width:150px;">Sub Total</th>
-              <th class="has-text-right" style="width:150px;">Total</th>
+              <th class="has-text-right" style="width:150px;">Nombres</th>
+              <th class="has-text-right" style="width:150px;">Apellidos</th>
+              <th class="has-text-right" style="width:150px;">DNI</th>
+              <th class="has-text-right" style="width:150px;">Correo</th>
+              <th class="has-text-right" style="width:150px;">Grado Academico</th>
             </tr>
           </thead>
           <tbody>
