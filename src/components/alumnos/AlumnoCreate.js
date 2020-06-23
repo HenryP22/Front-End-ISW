@@ -45,7 +45,7 @@ export default {
           .value(value)
           .required()
 
-      },
+      }
 
      
   },

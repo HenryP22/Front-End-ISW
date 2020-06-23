@@ -1,11 +1,9 @@
 <template>
   <div>
     <h1 class="title">Docente</h1>
-
     <Loader v-if="isLoading" />
     <template v-else>
       <table class="table is-fullwidth is-striped">
-      
         <tfoot class="has-text-weight-bold">
           <tr>
             <td colspan="3" class="has-text-left">Nombres</td>
@@ -20,12 +18,28 @@
             <td class="has-text-left">{{model.dni}}</td>
           </tr>
           <tr>
+            <td colspan="3" class="has-text-left">Domicilio</td>
+            <td class="has-text-left">{{model.domicilio}}</td>
+          </tr>
+          <tr>
             <td colspan="3" class="has-text-left">Correo</td>
             <td class="has-text-left">{{model.correo}}</td>
           </tr>
           <tr>
-            <td colspan="3" class="has-text-left">Grado Academico</td>
-            <td class="has-text-left">{{model.grado_academico}}</td>
+            <td colspan="3" class="has-text-left">Costo</td>
+            <td class="has-text-left">{{model.costo}}</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="has-text-left">Disponibilidad</td>
+            <td class="has-text-left">{{model.disponibilidad}}</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="has-text-left">Número de cuenta</td>
+            <td class="has-text-left">{{model.numero_cuenta}}</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="has-text-left">Membresía</td>
+            <td class="has-text-left">{{model.membresia}}</td>
           </tr>
         </tfoot>
       </table>
@@ -33,4 +47,4 @@
   </div>
 </template>
 
-<script src="./AlumnoDetail.js"></script>
+<script src="./DocenteDetail.js"></script>

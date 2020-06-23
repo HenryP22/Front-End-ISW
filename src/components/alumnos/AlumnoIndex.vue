@@ -11,21 +11,21 @@
       <table class="table is-striped is-fullwidth">
         <thead>
           <th>Alumno</th>
-          <th style="width:200px;" class="has-text-right">Nombre</th>
-          <th style="width:200px;" class="has-text-right">Apellido</th>
-          <th style="width:200px;" class="has-text-right">Dni</th>
-          <th style="width:200px;" class="has-text-right">Correo</th>
-          <th style="width:200px;" class="has-text-right">Grado Académico</th>
+          <th style="width:200px;" class="has-text-left">Nombre</th>
+          <th style="width:200px;" class="has-text-left">Apellido</th>
+          <th style="width:200px;" class="has-text-left">Dni</th>
+          <th style="width:200px;" class="has-text-left">Correo</th>
+          <th style="width:200px;" class="has-text-left">Grado Académico</th>
           <th style="width:150px;"></th>  
         </thead>
         <tbody>
           <tr v-for="item in collection.items" :key="item.id">
-            <td class="has-text-right"> {{item.alumnoId}}</td>
-            <td class="has-text-right"> {{item.nombres}}</td>
-            <td class="has-text-right"> {{item.apellidos}}</td>
-            <td class="has-text-right"> {{item.dni}}</td>
-            <td class="has-text-right"> {{item.correo}}</td>
-            <td class="has-text-right"> {{item.grado_academico}}</td>
+            <td class="has-text-left"> {{item.alumnoId}}</td>
+            <td class="has-text-left"> {{item.nombres}}</td>
+            <td class="has-text-left"> {{item.apellidos}}</td>
+            <td class="has-text-left"> {{item.dni}}</td>
+            <td class="has-text-left"> {{item.correo}}</td>
+            <td class="has-text-left"> {{item.grado_academico}}</td>
             <td class="has-text-centered">
               <router-link :to="`/alumnos/${item.alumnoId}/detail`">Ver detalle</router-link>
             </td>

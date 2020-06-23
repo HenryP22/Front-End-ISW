@@ -11,7 +11,11 @@ import AlumnoDetail from '../components/alumnos/AlumnoDetail.vue';
 import AlumnoCreate from '../components/alumnos/AlumnoCreate.vue';
 import AlumnoIndex from '../components/alumnos/AlumnoIndex.vue';
 import DocenteIndex from '../components/docentes/DocenteIndex.vue';
+import DocenteDetail from '../components/docentes/DocenteDetail.vue';
+import DocenteCreate from '../components/docentes/DocenteCreate.vue';
 import CursoIndex from '../components/cursos/CursoIndex.vue';
+import CursoDetail from '../components/cursos/CursoDetail.vue';
+import CursoCreate from '../components/cursos/CursoCreate.vue';
 import FavoritoIndex from '../components/favoritos/FavoritoIndex.vue';
 import InformeIndex from '../components/informes/InformeIndex.vue';
 import MembresiaIndex from '../components/membresias/MembresiaIndex.vue';
@@ -59,6 +63,16 @@ const routes = [
     component: CursoIndex
   },  
   {
+    path: '/cursos/:id/detail',
+    name: 'cursosdetail',
+    component: CursoDetail
+  },  
+  {
+    path: '/cursos/create',
+    name: 'cursoscreate',
+    component: CursoCreate
+  },  
+  {
     path: '/informes',
     name: 'informes',
     component: InformeIndex
@@ -67,6 +81,16 @@ const routes = [
     path: '/membresias',
     name: 'membresias',
     component: MembresiaIndex
+  },  
+  {
+    path: '/membresias/:id/detail',
+    name: 'membresiasdetail',
+    component: AlumnoDetail
+  },  
+  {
+    path: '/membresias/create',
+    name: 'membresiascreate',
+    component: AlumnoCreate
   },  
   {
     path: '/padres',
@@ -97,6 +121,16 @@ const routes = [
     path: '/docentes',
     name: 'docentes',
     component: DocenteIndex
+  }, 
+  {
+    path: '/docentes/:id/detail',
+    name: 'docentesdetail',
+    component: DocenteDetail
+  },  
+  {
+    path: '/docentes/create',
+    name: 'docentescreate',
+    component: DocenteCreate
   },  
   {
     path: '/orders/:id/detail',

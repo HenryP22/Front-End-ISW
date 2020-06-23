@@ -25,7 +25,7 @@
             <td class="has-text-right"> {{item.grado_academico}}</td>
             
             <td class="has-text-centered">
-              <router-link :to="`/docentes/${item.cursoId}/detail`">Ver detalle</router-link>
+              <router-link :to="`/cursos/${item.cursoId}/detail`">Ver detalle</router-link>
             </td>
           </tr>
         </tbody>
