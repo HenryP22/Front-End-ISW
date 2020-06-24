@@ -2,7 +2,7 @@ import Loader from '../../shared/Loader'
 import Pager from '../../shared/Pager'
 
 export default {
-  name: 'CursoCreate',
+  name: 'PagoCreate',
   components: {
     Loader, Pager
   },
@@ -10,11 +10,10 @@ export default {
     this.get();
   },
   validators: {
-    'model.nombre'(value) {
+    'model.tarjetaId'(value) {
         return this.$validator
           .value(value)
           .required()
-          .maxLength(20);
       },
       'model.descripcion'(value) {
         return this.$validator
@@ -22,7 +21,7 @@ export default {
           .required()
           .maxLength(20);
       },
-      'model.grado_academico'(value) {
+      'model.cvcTarjeta'(value) {
         return this.$validator
           .value(value)
           .maxLength(9);
@@ -33,9 +32,9 @@ export default {
     return {
       isLoading: false,
       model: {
-        nombre: null,
+        tarjetaId: null,
         descripcion: null,
-        grado_academico: null
+        cvcTarjeta: null,
       }
     }
   },
@@ -46,7 +45,7 @@ export default {
       if (!id) return;
 
       this.isLoading = true;
-      this.$proxies.cursoProxy.get(id)
+      this.$proxies.pagoProxy.get(id)
         .then(x => {
           this.model = x.data;
           this.isLoading = false;
@@ -67,14 +66,14 @@ export default {
         this.isLoading = true;
 
         
-          this.$proxies.cursoProxy.create(this.model)
+          this.$proxies.pagoProxy.create(this.model)
           .then(() => {
             this.$notify({
               group: "global",
               type: "is-success",
               text: 'Alumno creado con éxito'
             });
-            this.$router.push('/cursos');
+            this.$router.push('/pagos');
           })
           .catch(() => {
             this.isLoading = false;

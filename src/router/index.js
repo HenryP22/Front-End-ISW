@@ -1,12 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Default from '../components/Default.vue';
-import OrderIndex from '../components/orders/OrderIndex.vue';
-import OrderCreate from '../components/orders/OrderCreate.vue';
-import OrderDetail from '../components/orders/OrderDetail.vue';
-import ClientIndex from '../components/clients/ClientIndex.vue';
-import ProductIndex from '../components/products/ProductIndex.vue';
-import ProductCreateOrUpdate from '../components/products/ProductCreateOrUpdate.vue';
 import AlumnoDetail from '../components/alumnos/AlumnoDetail.vue';
 import AlumnoCreate from '../components/alumnos/AlumnoCreate.vue';
 import AlumnoIndex from '../components/alumnos/AlumnoIndex.vue';
@@ -18,10 +12,20 @@ import CursoDetail from '../components/cursos/CursoDetail.vue';
 import CursoCreate from '../components/cursos/CursoCreate.vue';
 import FavoritoIndex from '../components/favoritos/FavoritoIndex.vue';
 import InformeIndex from '../components/informes/InformeIndex.vue';
+import InformeDetail from '../components/informes/InformeDetail.vue';
+import InformeCreate from '../components/informes/InformeCreate.vue';
 import MembresiaIndex from '../components/membresias/MembresiaIndex.vue';
+import MembresiaDetail from '../components/membresias/MembresiaDetail.vue';
+import MembresiaCreate from '../components/membresias/MembresiaCreate.vue';
 import PadreIndex from '../components/padres/PadreIndex.vue';
+import PadreDetail from '../components/padres/PadreDetail.vue';
+import PadreCreate from '../components/padres/PadreCreate.vue';
 import PagoIndex from '../components/pagos/PagoIndex.vue';
+import PagoDetail from '../components/pagos/PagoDetail.vue';
+import PagoCreate from '../components/pagos/PagoCreate.vue';
 import TarjetaIndex from '../components/tarjetas/TarjetaIndex.vue';
+import TarjetaDetail from '../components/tarjetas/TarjetaDetail.vue';
+import TarjetaCreate from '../components/tarjetas/TarjetaCreate.vue';
 import TutoriaIndex from '../components/tutorias/TutoriaIndex.vue';
 
 
@@ -36,11 +40,6 @@ const routes = [
     path: '/',
     name: 'default',
     component: Default
-  },
-  {
-    path: '/orders',
-    name: 'orders',
-    component: OrderIndex
   },  
   {
     path: '/alumnos',
@@ -78,6 +77,16 @@ const routes = [
     component: InformeIndex
   },  
   {
+    path: '/informes/:id/detail',
+    name: 'informesdetail',
+    component: InformeDetail
+  },  
+  {
+    path: '/informes/create',
+    name: 'informescreate',
+    component: InformeCreate
+  },
+  {
     path: '/membresias',
     name: 'membresias',
     component: MembresiaIndex
@@ -85,12 +94,12 @@ const routes = [
   {
     path: '/membresias/:id/detail',
     name: 'membresiasdetail',
-    component: AlumnoDetail
+    component: MembresiaDetail
   },  
   {
     path: '/membresias/create',
     name: 'membresiascreate',
-    component: AlumnoCreate
+    component: MembresiaCreate
   },  
   {
     path: '/padres',
@@ -98,14 +107,44 @@ const routes = [
     component: PadreIndex
   },  
   {
+    path: '/padres/:id/detail',
+    name: 'padresdetail',
+    component: PadreDetail
+  },  
+  {
+    path: '/padres/create',
+    name: 'padrescreate',
+    component: PadreCreate
+  }, 
+  {
     path: '/pagos',
     name: 'pagos',
     component: PagoIndex
   },  
   {
+    path: '/pagos/:id/detail',
+    name: 'pagosdetail',
+    component: PagoDetail
+  },  
+  {
+    path: '/pagos/create',
+    name: 'pagoscreate',
+    component: PagoCreate
+  },  
+  {
     path: '/tarjetas',
     name: 'tarjetas',
     component: TarjetaIndex
+  },  
+  {
+    path: '/tarjetas/:id/detail',
+    name: 'tarjetasdetail',
+    component: TarjetaDetail
+  },  
+  {
+    path: '/tarjetas/create',
+    name: 'tarjetascreate',
+    component: TarjetaCreate
   },  
   {
     path: '/tutorias',
@@ -132,36 +171,6 @@ const routes = [
     name: 'docentescreate',
     component: DocenteCreate
   },  
-  {
-    path: '/orders/:id/detail',
-    name: 'ordersdetail',
-    component: OrderDetail
-  },
-  {
-    path: '/orders/create',
-    name: 'orderscreate',
-    component: OrderCreate
-  },
-  {
-    path: '/clients',
-    name: 'clients',
-    component: ClientIndex
-  },
-  {
-    path: '/products',
-    name: 'products',
-    component: ProductIndex
-  },
-  {
-    path: '/products/create',
-    name: 'productscreate',
-    component: ProductCreateOrUpdate
-  },
-  {
-    path: '/products/:id/edit',
-    name: 'productsedit',
-    component: ProductCreateOrUpdate
-  },
   {
     path: '/users',
     name: 'users',

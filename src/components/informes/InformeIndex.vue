@@ -23,7 +23,7 @@
             <td class="has-text-right"> {{item.fecha}}</td>
             
             <td class="has-text-centered">
-              <router-link :to="`/docentes/${item.informeId}/detail`">Ver detalle</router-link>
+              <router-link :to="`/informes/${item.informeId}/detail`">Ver detalle</router-link>
             </td>
           </tr>
         </tbody>

@@ -18,10 +18,10 @@
           <tr v-for="item in collection.items" :key="item.id">
             <td class="has-text-left"> {{item.pagoId}}</td>
             <td class="has-text-right"> {{item.descripcion}}</td>
-            <td class="has-text-right"> {{item.cvctarjeta}}</td>
+            <td class="has-text-right"> {{item.cvcTarjeta}}</td>
             
             <td class="has-text-right">
-              <router-link :to="`/docentes/${item.pagoId}/detail`">Ver detalle</router-link>
+              <router-link :to="`/pagos/${item.pagoId}/detail`">Ver detalle</router-link>
             </td>
           </tr>
         </tbody>
