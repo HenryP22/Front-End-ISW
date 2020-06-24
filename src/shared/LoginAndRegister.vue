@@ -7,7 +7,7 @@
       </div>
       <div class="box">
         <div class="tabs is-boxed">
-          <ul>
+          <ul> 
             <li :class="{'is-active': tab === 'login'}">
               <a @click="tab = 'login'">Login</a>
             </li>
