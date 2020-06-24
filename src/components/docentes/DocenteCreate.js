@@ -25,7 +25,7 @@ export default {
       'model.dni'(value) {
         return this.$validator
           .value(value)
-          .maxLength(9);
+          .maxLength(8);
       },
       'model.domicilio'(value) {
         return this.$validator
@@ -43,9 +43,14 @@ export default {
         return this.$validator
           .value(value)
           .required()
-          .maxLength(20);
       },
-      'model.numero_cuenta'(value) {
+      'model.disponibilidad'(value) {
+        return this.$validator
+          .value(value)
+          .required() 
+          .maxLength(16);      
+      },
+      'model.numerocuenta'(value) {
         return this.$validator
           .value(value)
           .required() 
@@ -68,9 +73,8 @@ export default {
         domicilio: null,
         correo:null,
         costo: null,
-        status_disponibilidad: true,
-        numero_cuenta: null,
-        status_membresia: false,
+        disponibilidad: null,
+        numerocuenta: null,
         membresia: null
       }
     }

@@ -2,7 +2,7 @@ import Loader from '../../shared/Loader'
 import Pager from '../../shared/Pager'
 
 export default {
-  name: 'CursoCreate',
+  name: 'MembresiaCreate',
   components: {
     Loader, Pager
   },
@@ -10,22 +10,28 @@ export default {
     this.get();
   },
   validators: {
-    'model.nombre'(value) {
+    'model.tarjetaId'(value) {
         return this.$validator
           .value(value)
           .required()
           .maxLength(20);
       },
-      'model.descripcion'(value) {
+      'model.docenteId'(value) {
         return this.$validator
           .value(value)
           .required()
           .maxLength(20);
       },
-      'model.grado_academico'(value) {
+      'model.cvc_tarjeta'(value) {
         return this.$validator
           .value(value)
-          .maxLength(9);
+          .maxLength(3);
+      },
+      'model.fecha_expiracion'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+          .maxLength(50);
       }
      
   },
@@ -33,9 +39,10 @@ export default {
     return {
       isLoading: false,
       model: {
-        nombre: null,
-        descripcion: null,
-        grado_academico: null
+        tarjetaId: null,
+        docenteId: null,
+        cvc_tarjeta: null,
+        fecha_expiracion: null
       }
     }
   },
@@ -46,7 +53,7 @@ export default {
       if (!id) return;
 
       this.isLoading = true;
-      this.$proxies.cursoProxy.get(id)
+      this.$proxies.membresiaProxy.get(id)
         .then(x => {
           this.model = x.data;
           this.isLoading = false;
@@ -66,15 +73,33 @@ export default {
 
         this.isLoading = true;
 
-        
-          this.$proxies.cursoProxy.create(this.model)
+        if(this.model.membresiaId) {
+          this.$proxies.membresiaProxy.update(this.model.membresiaId, this.model)
           .then(() => {
             this.$notify({
               group: "global",
               type: "is-success",
-              text: 'Alumno creado con éxito'
+              text: 'Producto actualizado con éxito'
             });
-            this.$router.push('/cursos');
+            this.$router.push('/membresias');
+          })
+          .catch(() => {
+            this.isLoading = false;
+            this.$notify({
+              group: "global",
+              type: "is-danger",
+              text: 'Ocurrió un error inesperado'
+            });
+          });
+        } else {
+          this.$proxies.membresiaProxy.create(this.model)
+          .then(() => {
+            this.$notify({
+              group: "global",
+              type: "is-success",
+              text: 'Producto creado con éxito'
+            });
+            this.$router.push('/membresias');
           })
           .catch(() => {
             this.isLoading = false;
@@ -87,7 +112,7 @@ export default {
         }
 
 
-      )
+      })
     }
   }
 }

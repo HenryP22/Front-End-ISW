@@ -2,7 +2,7 @@ import Loader from '../../shared/Loader'
 import Pager from '../../shared/Pager'
 
 export default {
-  name: 'CursoCreate',
+  name: 'PadreCreate',
   components: {
     Loader, Pager
   },
@@ -10,22 +10,27 @@ export default {
     this.get();
   },
   validators: {
-    'model.nombre'(value) {
+    'model.nombres'(value) {
         return this.$validator
           .value(value)
           .required()
           .maxLength(20);
       },
-      'model.descripcion'(value) {
+      'model.apellidos'(value) {
         return this.$validator
           .value(value)
           .required()
           .maxLength(20);
       },
-      'model.grado_academico'(value) {
+      'model.dni'(value) {
         return this.$validator
           .value(value)
           .maxLength(9);
+      },
+      'model.correo'(value) {
+        return this.$validator
+          .value(value)
+          .maxLength(50);
       }
      
   },
@@ -33,9 +38,10 @@ export default {
     return {
       isLoading: false,
       model: {
-        nombre: null,
-        descripcion: null,
-        grado_academico: null
+        nombres: null,
+        apellidos: null,
+        dni: null,
+        correo: null
       }
     }
   },
@@ -46,7 +52,7 @@ export default {
       if (!id) return;
 
       this.isLoading = true;
-      this.$proxies.cursoProxy.get(id)
+      this.$proxies.padreProxy.get(id)
         .then(x => {
           this.model = x.data;
           this.isLoading = false;
@@ -67,14 +73,14 @@ export default {
         this.isLoading = true;
 
         
-          this.$proxies.cursoProxy.create(this.model)
+          this.$proxies.padreProxy.create(this.model)
           .then(() => {
             this.$notify({
               group: "global",
               type: "is-success",
               text: 'Alumno creado con éxito'
             });
-            this.$router.push('/cursos');
+            this.$router.push('/padres');
           })
           .catch(() => {
             this.isLoading = false;

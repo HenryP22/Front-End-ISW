@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="title">{{model.docenteId ? model.nombres : 'Nuevo Docente'}}</h1>
-    <h2 class="subtitle">{{model.docenteId ? model.apellidos : 'Creación de Docente.'}}</h2>
+    <h1 class="title">Nuevo Docente</h1>
+    <h2 class="subtitle">Creación de Docente</h2>
 
     <Loader v-if="isLoading" />
     <form v-else @submit.prevent="save">
@@ -37,7 +37,7 @@
           :class="{error: validation.hasError('model.dni')}"
           v-model="model.dni"
           class="input"
-          type="number"
+          type="text"
           placeholder="Ingrese la dni"
         />
         <p class="help is-danger">{{validation.firstError('model.dni')}}</p>
@@ -81,18 +81,27 @@
         <p class="help is-danger">{{validation.firstError('model.costo')}}</p>
       </div>
       
-
+      <div class="field">
+        <input
+          :class="{error: validation.hasError('model.disponibilidad')}"
+          v-model="model.disponibilidad"
+         class="input"
+          type="text"
+          placeholder="Ingrese el disponibilidad"
+        />
+        <p class="help is-danger">{{validation.firstError('model.disponibilidad')}}</p>
+      </div>
 
 
       <div class="field">
         <input
-          :class="{error: validation.hasError('model.numero_cuenta')}"
-          v-model="model.numero_cuenta"
+          :class="{error: validation.hasError('model.numerocuenta')}"
+          v-model="model.numerocuenta"
          class="input"
-          type="number"
+          type="text"
           placeholder="Ingrese el numero cuenta"
         />
-        <p class="help is-danger">{{validation.firstError('model.numero_cuenta')}}</p>
+        <p class="help is-danger">{{validation.firstError('model.numerocuenta')}}</p>
       </div>
 
 
