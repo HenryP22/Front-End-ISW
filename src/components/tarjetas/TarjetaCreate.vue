@@ -9,23 +9,23 @@
 
       <div class="field">
         <input
-          :class="{error: validation.hasError('model.fecha_expiración')}"
-          v-model="model.fecha_expiración"
+          :class="{error: validation.hasError('model.fecha_expiracion')}"
+          v-model="model.fecha_expiracion"
           class="input"
           type="date"
           placeholder="Ingrese el fecha expiracion"
         />
-        <p class="help is-danger">{{validation.firstError('model.fecha_expiración')}}</p>
+        <p class="help is-danger">{{validation.firstError('model.fecha_expiracion')}}</p>
       </div>
       <div class="field">
         <input
-          :class="{error: validation.hasError('model.numero_poseedor')}"
-          v-model="model.numero_poseedor"
+          :class="{error: validation.hasError('model.nombre_poseedor')}"
+          v-model="model.nombre_poseedor"
           class="input"
           type="text"
-          placeholder="Ingrese la numero poseedor"
+          placeholder="Ingrese la nombre poseedor"
         />
-        <p class="help is-danger">{{validation.firstError('model.numero_poseedor')}}</p>
+        <p class="help is-danger">{{validation.firstError('model.nombre_poseedor')}}</p>
       </div>
       
       <div class="field">

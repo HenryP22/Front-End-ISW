@@ -13,7 +13,7 @@
           </tr>
           <tr>
             <td colspan="3" class="has-text-left">Fecha de expiración</td>
-            <td class="has-text-left">{{model.fecha_expiración}}</td>
+            <td class="has-text-left">{{model.fecha_expiracion}}</td>
           </tr>
           <tr>
             <td colspan="3" class="has-text-left">Nombre poseedor</td>

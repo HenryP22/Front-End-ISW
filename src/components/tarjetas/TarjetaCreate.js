@@ -10,13 +10,13 @@ export default {
     this.get();
   },
   validators: {
-      'model.fecha_expiración'(value) {
+      'model.fecha_expiracion'(value) {
         return this.$validator
           .value(value)
           .required()
           .maxLength(20);
       },
-      'model.numero_poseedor'(value) {
+      'model.nombre_poseedor'(value) {
         return this.$validator
           .value(value)
           .required()
@@ -34,7 +34,7 @@ export default {
     return {
       isLoading: false,
       model: {
-        fecha_expiración: null,
+        fecha_expiracion: null,
         nombre_poseedor: null,
         numero_tarjeta: null
       }

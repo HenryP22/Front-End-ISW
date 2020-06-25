@@ -25,11 +25,12 @@ export default {
       'model.dni'(value) {
         return this.$validator
           .value(value)
-          .maxLength(9);
+          .maxLength(8);
       },
       'model.correo'(value) {
         return this.$validator
           .value(value)
+          .email()
           .maxLength(50);
       }
      

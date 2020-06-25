@@ -8,7 +8,11 @@
       
         <tfoot class="has-text-weight-bold">
           <tr>
-            <td colspan="3" class="has-text-left">TutoriaId</td>
+            <td colspan="3" class="has-text-left">Id Informe</td>
+            <td class="has-text-left">{{model.informeId}}</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="has-text-left">Id Tutoria</td>
             <td class="has-text-left">{{model.tutoriaId}}</td>
           </tr>
           <tr>

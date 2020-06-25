@@ -5,7 +5,7 @@ export default class TutoriaProxy {
     }
 
     get(id) {
-        return this.axios.get(this.url + `tutorias/${id}`);
+        return this.axios.get(this.url + `tutorias/api/id/${id}`);
     }
 
     getAll(page, take) {

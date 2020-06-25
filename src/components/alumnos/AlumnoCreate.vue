@@ -1,10 +1,23 @@
 <template>
   <div>
-    <h1 class="title">{{model.alumnoId ? model.nombres : 'Nuevo Alumno'}}</h1>
-    <h2 class="subtitle">{{model.alumnoId ? model.apellidos : 'Creación de Alumno.'}}</h2>
+    <h1 class="title">Nuevo Alumno</h1>
+    <h2 class="subtitle">Creación de Alumno</h2>
 
     <Loader v-if="isLoading" />
     <form v-else @submit.prevent="save">
+      
+
+       <div class="field">
+        <input
+          :class="{error: validation.hasError('model.padreId')}"
+          v-model.number="model.padreId"
+         class="input"
+          type="text"
+          placeholder="Ingrese el Id Padre"
+        />
+        <p class="help is-danger">{{validation.firstError('model.padreId')}}</p>
+      </div>
+
 
       <div class="field">
         <input
@@ -33,13 +46,13 @@
 
 
       <div class="field">
-        <textarea
+        <input
           :class="{error: validation.hasError('model.dni')}"
           v-model="model.dni"
           class="input"
           type="number"
           placeholder="Ingrese la dni"
-        ></textarea>
+        />
         <p class="help is-danger">{{validation.firstError('model.dni')}}</p>
       </div>
 
@@ -55,23 +68,17 @@
         <p class="help is-danger">{{validation.firstError('model.correo')}}</p>
         </div>
         
+          <select v-model="model.grado_academico" >
+                <option>Primaria</option>
+                <option>Secundaria</option>
+                </select>
+          <span>Selected: {{ model.grado_academico }}</span>
 
 
-
-        <div class="field">
-        <input
-          :class="{error: validation.hasError('model.grado_academico')}"
-          v-model="model.grado_academico"
-         class="input"
-          type="text"
-          placeholder="Ingrese el Grado Académico"
-        />
-        <p class="help is-danger">{{validation.firstError('model.grado_academico')}}</p>
-      </div>
       
       
       <div class="field">
-        <button type="submit" class="button is-info">Guardar</button>
+        <button type="submit" class="button is-info" >Guardar</button>
       </div>
     </form>
   </div>

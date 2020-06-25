@@ -2,7 +2,7 @@ import Loader from '../../shared/Loader'
 import Pager from '../../shared/Pager'
 
 export default {
-  name: 'InformeCreate',
+  name: 'TutoriaCreate',
   components: {
     Loader, Pager
   },
@@ -10,23 +10,40 @@ export default {
     this.get();
   },
   validators: {
+    'model.alumnoId'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+          .maxLength(20);
+      },
+      'model.cursoId'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+          .maxLength(20);
+      },
+      'model.docenteId'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+          .maxLength(20);
+      },
+      'model.costo'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+      },
       'model.descripcion'(value) {
         return this.$validator
           .value(value)
           .required()
-          .maxLength(50);
+          .maxLength(9);
       },
-      'model.fecha'(value) {
+      'model.cantidad_minutos'(value) {
         return this.$validator
           .value(value)
           .required()
-          .maxLength(20);
-      },
-      'model.tutoriaId'(value) {
-        return this.$validator
-          .value(value)
-          .required()
-          .maxLength(20);
+          .maxLength(9);
       }
      
   },
@@ -34,9 +51,12 @@ export default {
     return {
       isLoading: false,
       model: {
-        tutoriaId: null,
+        alumnoId: null,
+        cursoId: null,
+        docenteId: null,
+        costo: null,
         descripcion: null,
-        fecha: null
+        cantidad_minutos: null
       }
     }
   },
@@ -47,7 +67,7 @@ export default {
       if (!id) return;
 
       this.isLoading = true;
-      this.$proxies.informeProxy.get(id)
+      this.$proxies.tutoriaProxy.get(id)
         .then(x => {
           this.model = x.data;
           this.isLoading = false;
@@ -68,14 +88,14 @@ export default {
         this.isLoading = true;
 
         
-          this.$proxies.informeProxy.create(this.model)
+          this.$proxies.tutoriaProxy.create(this.model)
           .then(() => {
             this.$notify({
               group: "global",
               type: "is-success",
               text: 'Alumno creado con éxito'
             });
-            this.$router.push('/informes');
+            this.$router.push('/tutorias');
           })
           .catch(() => {
             this.isLoading = false;

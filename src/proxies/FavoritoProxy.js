@@ -4,15 +4,12 @@ export default class FavoritoProxy {
         this.url = url;
     }
 
-    get(id) {
-        return this.axios.get(this.url + `favoritos/${id}`);
-    }
 
-    getAll(page, take) {
-        return this.axios.get(this.url + `favoritos?page=${page}&take=${take}`);
+    getAll(id,page, take) {
+        return this.axios.get(this.url + `padres/lista-favoritos/${id}?page=${page}&take=${take}`);
     }
 
     create(params) {
-        return this.axios.post(this.url + `favoritos`, params);
+        return this.axios.post(this.url + `padres/añadir-favoritos`, params);
     }
 }

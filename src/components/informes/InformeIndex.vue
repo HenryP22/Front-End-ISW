@@ -10,17 +10,17 @@
       </div>
       <table class="table is-striped is-fullwidth">
         <thead>
-          <th>Informe</th>
-          <th style="width:200px;" class="has-text-right">Descripcion</th>
-          <th style="width:200px;" class="has-text-right">Fecha</th>
+          <th style="width:50px;" class="has-text-centered">Informe</th>
+          <th style="width:200px;" class="has-text-left">Descripcion</th>
+          <th style="width:200px;" class="has-text-left">Fecha</th>
           
           <th style="width:150px;"></th>  
         </thead>
         <tbody>
           <tr v-for="item in collection.items" :key="item.id">
-            <td class="has-text-left"> {{item.informeId}}</td>
-            <td class="has-text-right"> {{item.descripcion}}</td>
-            <td class="has-text-right"> {{item.fecha}}</td>
+            <td class="has-text-centered"> {{item.informeId}}</td>
+            <td class="has-text-left"> {{item.descripcion}}</td>
+            <td class="has-text-left"> {{item.fecha}}</td>
             
             <td class="has-text-centered">
               <router-link :to="`/informes/${item.informeId}/detail`">Ver detalle</router-link>

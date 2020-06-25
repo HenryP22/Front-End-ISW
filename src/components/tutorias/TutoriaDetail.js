@@ -1,33 +1,26 @@
 import Loader from '../../shared/Loader'
-import Pager from '../../shared/Pager'
 
 export default {
-    name: 'FavoritoIndex',
+    name: 'TutoriaDetail',
     components: {
-        Loader, Pager
+        Loader
     },
     mounted() {
-        this.getAll(1);
+        this.get();
     },
     data() {
         return {
             isLoading: false,
-            collection: {
-                hasItems: false,
-                items: [],
-                total: 0,
-                page: 1,
-                pages: 0
-            }
+            model: {}
         }
     },
     methods: {
-        getAll(page) {
+        get() {
             this.isLoading = true;
 
-            this.$proxies.favoritoProxy.getAll(1,page, 10)
+            this.$proxies.tutoriaProxy.get(this.$route.params.id)
                 .then(x => {
-                    this.collection = x.data;
+                    this.model = x.data;
                     this.isLoading = false;
                 }).catch(() => {
                     this.isLoading = false;

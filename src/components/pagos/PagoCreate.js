@@ -15,6 +15,11 @@ export default {
           .value(value)
           .required()
       },
+      'model.tutoriaId'(value) {
+        return this.$validator
+          .value(value)
+          .required()
+      },
       'model.descripcion'(value) {
         return this.$validator
           .value(value)
@@ -33,6 +38,7 @@ export default {
       isLoading: false,
       model: {
         tarjetaId: null,
+        tutoriaId: null,
         descripcion: null,
         cvcTarjeta: null,
       }

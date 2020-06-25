@@ -70,52 +70,32 @@
         </div>
         
 
-        <div class="field">
-        <input
-          :class="{error: validation.hasError('model.costo')}"
-          v-model="model.costo"
-         class="input"
-          type="number"
-          placeholder="Ingrese el Costo"
-        />
-        <p class="help is-danger">{{validation.firstError('model.costo')}}</p>
-      </div>
       
-      <div class="field">
-        <input
-          :class="{error: validation.hasError('model.disponibilidad')}"
-          v-model="model.disponibilidad"
-         class="input"
-          type="text"
-          placeholder="Ingrese el disponibilidad"
-        />
-        <p class="help is-danger">{{validation.firstError('model.disponibilidad')}}</p>
-      </div>
+      <select v-model="model.disponibilidad" >
+                <option>Disponible</option>
+                <option>No disponible</option>
+                </select>
+          <span>Selected: {{ model.disponibilidad }}</span>
 
 
       <div class="field">
         <input
-          :class="{error: validation.hasError('model.numerocuenta')}"
-          v-model="model.numerocuenta"
+          :class="{error: validation.hasError('model.numero_cuenta')}"
+          v-model="model.numero_cuenta"
          class="input"
           type="text"
           placeholder="Ingrese el numero cuenta"
         />
-        <p class="help is-danger">{{validation.firstError('model.numerocuenta')}}</p>
+        <p class="help is-danger">{{validation.firstError('model.numero_cuenta')}}</p>
       </div>
 
 
 
-      <div class="field">
-        <input
-          :class="{error: validation.hasError('model.membresia')}"
-          v-model="model.membresia"
-         class="input"
-          type="text"
-          placeholder="Ingrese el membresia"
-        />
-        <p class="help is-danger">{{validation.firstError('model.membresia')}}</p>
-      </div>
+      <select v-model="model.membresia" >
+                <option>Activa</option>
+                <option>No activa</option>
+                </select>
+          <span>Selected: {{ model.membresia }}</span>
 
 
 

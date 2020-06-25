@@ -10,19 +10,17 @@
       </div>
       <table class="table is-striped is-fullwidth">
         <thead>
-          <th style="width:200px;" class="has-text-right">Curso</th>
-          <th style="width:200px;" class="has-text-right">Nombre</th>
-          <th style="width:200px;" class="has-text-right">Descripción</th>
-          <th style="width:200px;" class="has-text-right">Grado Académico</th>
+          <th style="width:50px;" class="has-text-centered">Curso</th>
+          <th style="width:200px;" class="has-text-left">Nombre</th>
+          <th style="width:200px;" class="has-text-left">Grado Académico</th>
          
           <th style="width:150px;"></th>  
         </thead>
         <tbody>
           <tr v-for="item in collection.items" :key="item.id">
-            <td class="has-text-left"> {{item.cursoId}}</td>
-            <td class="has-text-right"> {{item.nombre}}</td>
-            <td class="has-text-right"> {{item.descripcion}}</td>
-            <td class="has-text-right"> {{item.grado_academico}}</td>
+            <td class="has-text-centered"> {{item.cursoId}}</td>
+            <td class="has-text-left"> {{item.nombre}}</td>
+            <td class="has-text-left"> {{item.grado_academico}}</td>
             
             <td class="has-text-centered">
               <router-link :to="`/cursos/${item.cursoId}/detail`">Ver detalle</router-link>

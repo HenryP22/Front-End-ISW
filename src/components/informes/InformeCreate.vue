@@ -1,12 +1,21 @@
 <template>
   <div>
-    <h1 class="title">Creacion de Informe</h1>
-    
+    <h1 class="title">Nuevo Informe</h1>
+    <h2 class="subtitle">Creación de Informe</h2>
 
     <Loader v-if="isLoading" />
     <form v-else @submit.prevent="save">
 
-
+      <div class="field">
+        <input
+          :class="{error: validation.hasError('model.tutoriaId')}"
+          v-model.number="model.tutoriaId"
+          class="input"
+          type="text"
+          placeholder="Ingrese el tutoriaId"
+        />
+        <p class="help is-danger">{{validation.firstError('model.tutoriaId')}}</p>
+      </div>
       <div class="field">
         <input
           :class="{error: validation.hasError('model.descripcion')}"

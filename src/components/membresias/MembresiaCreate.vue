@@ -9,7 +9,7 @@
       <div class="field">
         <input
           :class="{error: validation.hasError('model.tarjetaId')}"
-          v-model="model.tarjetaId"
+          v-model.number="model.tarjetaId"
           class="input"
           type="int"
           placeholder="Ingrese el tarjetaId"
@@ -22,7 +22,7 @@
       <div class="field">
         <input
           :class="{error: validation.hasError('model.docenteId')}"
-          v-model="model.docenteId"
+          v-model.number="model.docenteId"
           class="input"
           type="int"
           placeholder="Ingrese el docenteId"
