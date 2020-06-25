@@ -10,19 +10,19 @@
       </div>
       <table class="table is-striped is-fullwidth">
         <thead>
-          <th>Tarjeta</th>
-          <th style="width:200px;" class="has-text-right">Fecha de expiración</th>
-          <th style="width:200px;" class="has-text-right">Propietario</th>
-          <th style="width:200px;" class="has-text-right">Número de tarjeta</th>
+          <th style="width:50px;" class="has-text-centered">Tarjeta</th>
+          <th style="width:200px;" class="has-text-left">Fecha de expiración</th>
+          <th style="width:200px;" class="has-text-left">Propietario</th>
+          <th style="width:200px;" class="has-text-left">Número de tarjeta</th>
           
           <th style="width:150px;"></th>  
         </thead>
         <tbody>
           <tr v-for="item in collection.items" :key="item.id">
-            <td class="has-text-left"> {{item.tarjetaId}}</td>
-            <td class="has-text-right"> {{item.fecha_expiración}}</td>
-            <td class="has-text-right"> {{item.nombre_poseedor}}</td>
-            <td class="has-text-right"> {{item.numero_tarjeta}}</td>
+            <td class="has-text-centered"> {{item.tarjetaId}}</td>
+            <td class="has-text-left"> {{item.fecha_expiracion}}</td>
+            <td class="has-text-left"> {{item.nombre_poseedor}}</td>
+            <td class="has-text-left"> {{item.numero_tarjeta}}</td>
             
             <td class="has-text-centered">
               <router-link :to="`/tarjetas/${item.tarjetaId}/detail`">Ver detalle</router-link>

@@ -27,6 +27,8 @@ import TarjetaIndex from '../components/tarjetas/TarjetaIndex.vue';
 import TarjetaDetail from '../components/tarjetas/TarjetaDetail.vue';
 import TarjetaCreate from '../components/tarjetas/TarjetaCreate.vue';
 import TutoriaIndex from '../components/tutorias/TutoriaIndex.vue';
+import TutoriaDetail from '../components/tutorias/TutoriaDetail.vue';
+import TutoriaCreate from '../components/tutorias/TutoriaCreate.vue';
 
 
 import UserIndex from '../components/users/UserIndex.vue';
@@ -150,6 +152,16 @@ const routes = [
     path: '/tutorias',
     name: 'tutorias',
     component: TutoriaIndex
+  },  
+  {
+    path: '/tutorias/:id/detail',
+    name: 'tutoriasdetail',
+    component: TutoriaDetail
+  },  
+  {
+    path: '/tutorias/create',
+    name: 'tutoriascreate',
+    component: TutoriaCreate
   },  
   {
     path: '/favoritos',

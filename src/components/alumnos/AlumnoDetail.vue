@@ -1,12 +1,16 @@
 <template>
   <div>
-    <h1 class="title">Docente</h1>
+    <h1 class="title">Alumno</h1>
 
     <Loader v-if="isLoading" />
     <template v-else>
       <table class="table is-fullwidth is-striped">
       
         <tfoot class="has-text-weight-bold">
+          <tr>
+            <td colspan="3" class="has-text-left">Id Padre</td>
+            <td class="has-text-left">{{model.padreId}}</td>
+          </tr>
           <tr>
             <td colspan="3" class="has-text-left">Nombres</td>
             <td class="has-text-left">{{model.nombres}}</td>

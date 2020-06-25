@@ -9,12 +9,23 @@
       <div class="field">
         <input
           :class="{error: validation.hasError('model.tarjetaId')}"
-          v-model="model.tarjetaId"
+          v-model.number="model.tarjetaId"
           class="input"
-          type="number"
+          type="text"
           placeholder="Ingrese el tarjetaId"
         />
         <p class="help is-danger">{{validation.firstError('model.tarjetaId')}}</p>
+      </div>
+
+      <div class="field">
+        <input
+          :class="{error: validation.hasError('model.tutoriaId')}"
+          v-model.number="model.tutoriaId"
+          class="input"
+          type="text"
+          placeholder="Ingrese el tutoriaId"
+        />
+        <p class="help is-danger">{{validation.firstError('model.tutoriaId')}}</p>
       </div>
 
 

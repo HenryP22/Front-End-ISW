@@ -10,6 +10,12 @@ export default {
     this.get();
   },
   validators: {
+    'model.padreId'(value) {
+      return this.$validator
+        .value(value)
+        .required()
+        .maxLength(20);
+    },
     'model.nombres'(value) {
         return this.$validator
           .value(value)
@@ -25,13 +31,13 @@ export default {
       'model.dni'(value) {
         return this.$validator
           .value(value)
-          .maxLength(9);
+          .maxLength(8);
       },
       'model.correo'(value) {
         return this.$validator
           .value(value)
           .required()
-         
+          .email()
           .maxLength(50);
       },
       'model.grado_academico'(value) {
@@ -40,20 +46,13 @@ export default {
           .required()
           .maxLength(20);
       },
-      'model.padreId'(value) {
-        return this.$validator
-          .value(value)
-          .required()
-
-      }
-
      
   },
   data() {
     return {
       isLoading: false,
       model: {
-        padreId:1,
+        padreId:null,
         nombres: null,
         apellidos: null,
         dni: null,

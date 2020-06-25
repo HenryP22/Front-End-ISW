@@ -10,17 +10,20 @@
       </div>
       <table class="table is-striped is-fullwidth">
         <thead>
-          <th>Pago</th>
-          <th style="width:200px;" class="has-text-right">Descripción</th>
-          <th style="width:200px;" class="has-text-right">Cvc</th>
+          <th style="width:50px;" class="has-text-centered">Pago</th>
+          <th style="width:200px;" class="has-text-left">Nombre Tarjeta</th>
+          <th style="width:200px;" class="has-text-left">Número Tarjeta</th>
+          <th style="width:200px;" class="has-text-left">Descripción</th>
+          <th style="width:150px;" ></th>  
         </thead>
         <tbody>
           <tr v-for="item in collection.items" :key="item.id">
-            <td class="has-text-left"> {{item.pagoId}}</td>
-            <td class="has-text-right"> {{item.descripcion}}</td>
-            <td class="has-text-right"> {{item.cvcTarjeta}}</td>
+            <td class="has-text-centered"> {{item.pagoId}}</td>
+            <td class="has-text-left"> {{item.tarjeta.nombre_poseedor}}</td>
+            <td class="has-text-left"> {{item.tarjeta.numero_tarjeta}}</td>
+            <td class="has-text-left"> {{item.descripcion}}</td>
             
-            <td class="has-text-right">
+            <td class="has-text-centered">
               <router-link :to="`/pagos/${item.pagoId}/detail`">Ver detalle</router-link>
             </td>
           </tr>

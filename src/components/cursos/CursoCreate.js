@@ -14,19 +14,14 @@ export default {
         return this.$validator
           .value(value)
           .required()
-          .maxLength(20);
+          .maxLength(30);
       },
       'model.descripcion'(value) {
         return this.$validator
           .value(value)
           .required()
-          .maxLength(20);
+          .maxLength(1000);
       },
-      'model.grado_academico'(value) {
-        return this.$validator
-          .value(value)
-          .maxLength(9);
-      }
      
   },
   data() {

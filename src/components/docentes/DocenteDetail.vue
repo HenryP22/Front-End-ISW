@@ -26,10 +26,6 @@
             <td class="has-text-left">{{model.correo}}</td>
           </tr>
           <tr>
-            <td colspan="3" class="has-text-left">Costo</td>
-            <td class="has-text-left">{{model.costo}}</td>
-          </tr>
-          <tr>
             <td colspan="3" class="has-text-left">Disponibilidad</td>
             <td class="has-text-left">{{model.disponibilidad}}</td>
           </tr>

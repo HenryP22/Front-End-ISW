@@ -31,36 +31,21 @@ export default {
         return this.$validator
           .value(value)
           .required()    
-          .maxLength(50);
+          .maxLength(100);
       },
       'model.correo'(value) {
         return this.$validator
           .value(value)
-          .required()    
+          .required()
+          .email()    
           .maxLength(50);
       },
-      'model.costo'(value) {
-        return this.$validator
-          .value(value)
-          .required()
-      },
-      'model.disponibilidad'(value) {
+      'model.numero_cuenta'(value) {
         return this.$validator
           .value(value)
           .required() 
           .maxLength(16);      
       },
-      'model.numerocuenta'(value) {
-        return this.$validator
-          .value(value)
-          .required() 
-          .maxLength(16);      
-      },
-      'model.membresia'(value) {
-        return this.$validator
-          .value(value)
-          .required()       
-      }
      
   },
   data() {
@@ -72,9 +57,8 @@ export default {
         dni: null,
         domicilio: null,
         correo:null,
-        costo: null,
         disponibilidad: null,
-        numerocuenta: null,
+        numero_cuenta: null,
         membresia: null
       }
     }

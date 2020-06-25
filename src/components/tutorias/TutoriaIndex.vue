@@ -10,17 +10,17 @@
       </div>
       <table class="table is-striped is-fullwidth">
         <thead>
-          <th>Tutoría</th>
-          <th style="width:200px;" class="has-text-right">Descripción</th>
-          <th style="width:200px;" class="has-text-right">Duración</th>
+          <th style="width:50px;" class="has-text-centered">Tutoría</th>
+          <th style="width:200px;" class="has-text-left">Descripción</th>
+          <th style="width:200px;" class="has-text-left">Duración</th>
           
           <th style="width:150px;"></th>  
         </thead>
         <tbody>
           <tr v-for="item in collection.items" :key="item.id">
-            <td class="has-text-left"> {{item.tutoriaId}}</td>
-            <td class="has-text-right"> {{item.descripcion}}</td>
-            <td class="has-text-right"> {{item.cantidad_minutos}}</td>
+            <td class="has-text-centered"> {{item.tutoriaId}}</td>
+            <td class="has-text-left"> {{item.descripcion}}</td>
+            <td class="has-text-left"> {{item.cantidad_minutos}} minutos</td>
             
             <td class="has-text-centered">
               <router-link :to="`/tutorias/${item.tutoriaId}/detail`">Ver detalle</router-link>

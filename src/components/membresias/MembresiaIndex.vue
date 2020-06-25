@@ -10,17 +10,19 @@
       </div>
       <table class="table is-striped is-fullwidth">
         <thead>
-          <th>Membresía</th>
-          <th style="width:200px;" class="has-text-right">Cvc </th>
-          <th style="width:200px;" class="has-text-right">Fecha de Expiración</th>
+          <th style="width:50px;" class="has-text-centered">Membresía</th>
+          <th style="width:200px;" class="has-text-left">Portador</th>
+          <th style="width:200px;" class="has-text-left">Estado</th>
+          <th style="width:200px;" class="has-text-left">Fecha de Expiración</th>
           
           <th style="width:150px;"></th>  
         </thead>
         <tbody>
           <tr v-for="item in collection.items" :key="item.id">
-            <td class="has-text-left"> {{item.membresiaId}}</td>
-            <td class="has-text-right"> {{item.cvc_tarjeta}}</td>
-            <td class="has-text-right"> {{item.fecha_expiracion}}</td>
+            <td class="has-text-centered"> {{item.membresiaId}}</td>
+            <td class="has-text-left"> {{item.docente.nombres}}</td>
+            <td class="has-text-left"> {{item.docente.membresia}}</td>
+            <td class="has-text-left"> {{item.fecha_expiracion}}</td>
             
             <td class="has-text-centered">
               <router-link :to="`/membresias/${item.membresiaId}/detail`">Ver detalle</router-link>

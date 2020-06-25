@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="title">Creacion de Curso</h1>
-    
+    <h1 class="title">Nuevo Curso</h1>
+    <h2 class="subtitle">Creación de Curso</h2>
 
     <Loader v-if="isLoading" />
     <form v-else @submit.prevent="save">
@@ -32,16 +32,11 @@
 
 
 
-      <div class="field">
-        <input
-          :class="{error: validation.hasError('model.grado_academico')}"
-          v-model="model.grado_academico"
-          class="input"
-          type="text"
-          placeholder="Ingrese la grado academico"
-        />
-        <p class="help is-danger">{{validation.firstError('model.grado_academico')}}</p>
-      </div>
+        <select v-model="model.grado_academico" >
+                <option>Primaria</option>
+                <option>Secundaria</option>
+                </select>
+          <span>Selected: {{ model.grado_academico }}</span>
 
       
       <div class="field">
