@@ -6,7 +6,7 @@ export default class FavoritoProxy {
 
 
     getAll(id,page, take) {
-        return this.axios.get(this.url + `padres/lista-favoritos/${id}?page=${page}&take=${take}`);
+        return this.axios.get(this.url + `padres/lista-favoritos/?page=${page}&take=${take}`);
     }
 
     create(params) {
