@@ -77,10 +77,11 @@
 
       
       
-      <div class="field">
+      <div class="field" style="margin-top:20px">
         <button type="submit" class="button is-info" >Guardar</button>
       </div>
     </form>
+    
   </div>
 </template>
 
