@@ -56,16 +56,7 @@
               placeholder="Ingrese su e-mail"
             />
           </div>
-          <div class="field">
-            <input
-              :disabled="register.loading"
-              v-model="register.tipousuario"
-              required
-              class="input"
-              type="text"
-              placeholder="Ingrese su tipo de usuario"
-            />
-          </div>
+         
           <div class="field">
             <input
               :disabled="register.loading"
@@ -124,7 +115,6 @@ export default {
         password: null,
         nombres: null,
         apellidos: null,
-        tipousuario:null,
         loading: false
       }
     };

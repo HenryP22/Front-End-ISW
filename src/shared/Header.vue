@@ -26,6 +26,8 @@
             <router-link :class="{'is-active': $route.path.startsWith('/pagos')}" class="navbar-item" to="/pagos">Pagos</router-link>
             <router-link :class="{'is-active': $route.path.startsWith('/tarjetas')}" class="navbar-item" to="/tarjetas">Tarjetas</router-link>
             <router-link :class="{'is-active': $route.path.startsWith('/tutorias')}" class="navbar-item" to="/tutorias">Tutorías</router-link>
+
+            <router-link :class="{'is-active': $route.path.startsWith('/perfiles')}" class="navbar-item" to="/perfiles">Perfil</router-link>
             
 
             <router-link :class="{'is-active': $route.path.startsWith('/users')}" v-if="user.roles.includes('ADMIN')" class="navbar-item" to="/users">Usuarios</router-link>

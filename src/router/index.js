@@ -29,6 +29,7 @@ import TarjetaCreate from '../components/tarjetas/TarjetaCreate.vue';
 import TutoriaIndex from '../components/tutorias/TutoriaIndex.vue';
 import TutoriaDetail from '../components/tutorias/TutoriaDetail.vue';
 import TutoriaCreate from '../components/tutorias/TutoriaCreate.vue';
+import PerfilIndex from '../components/perfiles/Perfil.vue';
 
 
 import UserIndex from '../components/users/UserIndex.vue';
@@ -43,6 +44,11 @@ const routes = [
     path: '/',
     name: 'default',
     component: Default
+  },  
+  {
+    path: '/perfiles',
+    name: 'perfiles',
+    component: PerfilIndex
   },  
   {
     path: '/alumnos',
