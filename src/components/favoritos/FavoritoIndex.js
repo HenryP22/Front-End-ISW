@@ -25,7 +25,7 @@ export default {
         getAll(page) {
             this.isLoading = true;
 
-            this.$proxies.favoritoProxy.getAll(1,page, 10)
+            this.$proxies.docenteProxy.getAll(page, 10)
                 .then(x => {
                     this.collection = x.data;
                     this.isLoading = false;

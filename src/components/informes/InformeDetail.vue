@@ -23,6 +23,9 @@
             <td colspan="3" class="has-text-left">fecha</td>
             <td class="has-text-left">{{model.fecha}}</td>
           </tr>
+          <td class="has-text-centered">
+      <router-link to="/informes">Atrás</router-link>
+      </td>
         </tfoot>
       </table>
     </template>

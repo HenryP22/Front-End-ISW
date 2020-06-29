@@ -37,6 +37,12 @@
             <td colspan="3" class="has-text-left">Membresía</td>
             <td class="has-text-left">{{model.membresia}}</td>
           </tr>
+          <div class="field has-text-right">
+        <router-link to="/favoritos">Añadir un docente a favoritos</router-link>
+      </div>
+      <td class="has-text-centered">
+      <router-link to="/docentes">Atrás</router-link>
+      </td>
         </tfoot>
       </table>
     </template>

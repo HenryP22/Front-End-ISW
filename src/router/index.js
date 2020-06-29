@@ -35,6 +35,7 @@ import UserIndex from '../components/users/UserIndex.vue';
 import store from '../store/index'
 
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -168,6 +169,7 @@ const routes = [
     name: 'favoritos',
     component: FavoritoIndex
   },  
+  
   {
     path: '/docentes',
     name: 'docentes',

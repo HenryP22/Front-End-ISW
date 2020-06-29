@@ -80,7 +80,11 @@
       <div class="field" style="margin-top:20px">
         <button type="submit" class="button is-info" >Guardar</button>
       </div>
+     
     </form>
+    <td class="has-text-centered">
+      <button  type="submit" styles="margin-top:20px;background-color:green"><router-link to="/alumnos">Cancelar</router-link></button>
+      </td>
     
   </div>
 </template>

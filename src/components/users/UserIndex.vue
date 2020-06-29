@@ -18,7 +18,7 @@
             <td>{{item.email}}</td>
             <td>
               <span class="icon">
-                <i v-if="item.roles.includes('Admin')" class="fa fa-check"></i>
+                <i v-if="item.roles.includes('ADMIN')" class="fa fa-check"></i>
                 <i v-else class="fa fa-times"></i>
               </span>
             </td>
