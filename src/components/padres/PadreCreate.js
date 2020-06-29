@@ -79,7 +79,7 @@ export default {
             this.$notify({
               group: "global",
               type: "is-success",
-              text: 'Alumno creado con éxito'
+              text: 'Padre creado con éxito'
             });
             this.$router.push('/padres');
           })

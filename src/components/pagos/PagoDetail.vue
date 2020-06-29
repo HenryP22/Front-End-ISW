@@ -23,6 +23,9 @@
             <td colspan="3" class="has-text-left">CVC</td>
             <td class="has-text-left">{{model.cvcTarjeta}}</td>
           </tr>
+          <td class="has-text-centered">
+      <router-link to="/pagos">Atrás</router-link>
+      </td>
         </tfoot>
       </table>
     </template>

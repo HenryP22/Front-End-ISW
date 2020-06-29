@@ -31,6 +31,9 @@
             <td colspan="3" class="has-text-left">Grado Academico</td>
             <td class="has-text-left">{{model.grado_academico}}</td>
           </tr>
+          <td class="has-text-centered">
+      <router-link to="/alumnos">Atrás</router-link>
+      </td>
         </tfoot>
       </table>
     </template>

@@ -27,6 +27,9 @@
             <td colspan="3" class="has-text-left">Tiempo</td>
             <td class="has-text-left">{{model.cantidad_minutos}} </td>
           </tr>
+          <td class="has-text-centered">
+      <router-link to="/tutorias">Atrás</router-link>
+      </td>
         </tfoot>
       </table>
     </template>

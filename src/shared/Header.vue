@@ -3,9 +3,9 @@
     <header class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item">
-            <img src="../assets/logo.png" alt="COMMERCE" />
-          </a>
+          
+             <div id="logo"></div>
+          
           <span class="navbar-burger burger" data-target="navbarMenuHeroC">
             <span></span>
             <span></span>
@@ -20,7 +20,8 @@
             <router-link :class="{'is-active': $route.path.startsWith('/cursos')}" class="navbar-item" to="/cursos">Cursos</router-link>
             <router-link :class="{'is-active': $route.path.startsWith('/informes')}" class="navbar-item" to="/informes">Informes</router-link>
             <router-link :class="{'is-active': $route.path.startsWith('/membresias')}" class="navbar-item" to="/membresias">Membresías</router-link>
-            <router-link :class="{'is-active': $route.path.startsWith('/favoritos')}" class="navbar-item" to="/favoritos">Favoritos</router-link>
+            <router-link :class="{'is-active': $route.path.startsWith('/favoritos')}" class="navbar-item" to="/favoritos">Favoritos del Padre</router-link>
+            
             <router-link :class="{'is-active': $route.path.startsWith('/padres')}" class="navbar-item" to="/padres">Padres</router-link>
             <router-link :class="{'is-active': $route.path.startsWith('/pagos')}" class="navbar-item" to="/pagos">Pagos</router-link>
             <router-link :class="{'is-active': $route.path.startsWith('/tarjetas')}" class="navbar-item" to="/tarjetas">Tarjetas</router-link>
@@ -43,7 +44,9 @@
     </header>
   </div>
 </template>
+<style>
 
+</style>
 <script>
 export default {
   name: "Header",

@@ -2,7 +2,7 @@
   <div class="columns is-centered">
     <div class="column is-6">
       <div class="has-text-centered">
-        <img src="../assets/logo.png" />
+        <img src="../Recursos/icon.png" />
         <hr />
       </div>
       <div class="box">
@@ -28,6 +28,7 @@
               placeholder="Ingrese su e-mail"
             />
           </div>
+          
           <div class="field">
             <input
               :disabled="login.loading"
@@ -53,6 +54,16 @@
               class="input"
               type="email"
               placeholder="Ingrese su e-mail"
+            />
+          </div>
+          <div class="field">
+            <input
+              :disabled="register.loading"
+              v-model="register.tipousuario"
+              required
+              class="input"
+              type="text"
+              placeholder="Ingrese su tipo de usuario"
             />
           </div>
           <div class="field">
@@ -113,6 +124,7 @@ export default {
         password: null,
         nombres: null,
         apellidos: null,
+        tipousuario:null,
         loading: false
       }
     };
@@ -160,11 +172,13 @@ export default {
           this.register.password = null;
           this.register.nombres = null;
           this.register.apellidos = null;
+          this.registe.tipousuario=null;
 
           this.$notify({
             group: "global",
             type: "is-success",
-            text: "Su cuenta ha sido creada con éxito"
+            text: "Su cuenta ha sido creada con éxito "
+            
           });
           this.register.loading = false;
         })

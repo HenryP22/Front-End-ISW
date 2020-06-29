@@ -23,6 +23,10 @@
             <td colspan="3" class="has-text-left">Correo</td>
             <td class="has-text-left">{{model.correo}}</td>
           </tr>
+          
+      <td class="has-text-centered">
+      <router-link to="/padres">Atrás</router-link>
+      </td>
         </tfoot>
       </table>
     </template>

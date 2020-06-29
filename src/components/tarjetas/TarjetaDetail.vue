@@ -23,6 +23,9 @@
             <td colspan="3" class="has-text-left">Número tarjeta</td>
             <td class="has-text-left">{{model.numero_tarjeta}}</td>
           </tr>
+          <td class="has-text-centered">
+      <router-link to="/tarjetas">Atrás</router-link>
+      </td>
         </tfoot>
       </table>
     </template>

@@ -27,6 +27,9 @@
             <td colspan="3" class="has-text-left">Fecha Expiración</td>
             <td class="has-text-left">{{model.fecha_expiracion}}</td>
           </tr>
+          <td class="has-text-centered">
+      <router-link to="/membresias">Atrás</router-link>
+      </td>
         </tfoot>
       </table>
     </template>

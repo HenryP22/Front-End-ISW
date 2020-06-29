@@ -1,4 +1,5 @@
 <template>
+
   <section id="app" class="hero is-light is-fullheight">
     <notifications group="global" position="top right" style="top:20px;right:20px;">
       <template slot="body" scope="props">
@@ -22,12 +23,19 @@
     
   </section>
 </template>
+<style>
 
+#app{
+  background-image: url('Recursos/Background2.png');
+  background-size: 100% 100%;
+}
+</style>
 
 <script>
 import Header from "./shared/Header.vue";
 import Footer from "./shared/Footer.vue";
 import LoginAndRegister from "./shared/LoginAndRegister.vue";
+
 export default {
   name: "app",
 
